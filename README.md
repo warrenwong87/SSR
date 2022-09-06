@@ -38,3 +38,7 @@ Welcome to visit:https://shadowsocks.be/9.html Enjoy it!
 如果需要配置 SSR 多用户，那么需要修改配置文件 /etc/shadowsocks.json，示例如下，下面的配置文件表示有3个用户，port_password 对应的是3个用户的端口和密码，修改完配置文件后，用 /etc/init.d/shadowsocks restart 命令重启 SSR 服务端生效：
 
 { "server":"0.0.0.0", "server_ipv6": "[::]", "local_address":"127.0.0.1", "local_port":1080, "port_password":{ "8989":"password1", "8990":"password2", "8991":"password3" }, "timeout":300, "method":"aes-256-cfb", "protocol": "origin", "protocol_param": "", "obfs": "plain", "obfs_param": "", "redirect": "", "dns_ipv6": false, "fast_open": false, "workers": 1 }
+
+更改下载地址链接
+shadowsocks_r_file="shadowsocksr-3.2.2"
+shadowsocks_r_url="https://github.com/shadowsocksrr/shadowsocksr/archive/3.2.2.tar.gz"
