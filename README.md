@@ -4,9 +4,13 @@
 
 3、脚本使用 在 VPS 上依次执行以下命令：
 
-centos 系统安装 Curl 方法: yum update -y && yum install curl -y yum -y install wget
+centos 系统安装 Curl 方法:
+yum update -y && yum install curl -y 
+yum -y install wget
 
-wget --no-check-certificate https://raw.githubusercontent.com/warrenwong87/SSR/main/shadowsocksR.sh chmod +x shadowsocksR.sh ./shadowsocksR.sh 2>&1 | tee shadowsocksR.log 之后会需要你手动输入 SSR 服务器信息，包括密码、端口、加密方式、协议、混淆，如果不设置，脚本会有默认值（具体参考上一部分的脚本介绍）：
+wget --no-check-certificate https://raw.githubusercontent.com/warrenwong87/SSR/main/shadowsocksR.sh 
+chmod +x shadowsocksR.sh 
+./shadowsocksR.sh 2>&1 | tee shadowsocksR.log 之后会需要你手动输入 SSR 服务器信息，包括密码、端口、加密方式、协议、混淆，如果不设置，脚本会有默认值（具体参考上一部分的脚本介绍）：
 
 ShadowsocksR 脚本
 
@@ -22,9 +26,14 @@ Welcome to visit:https://shadowsocks.be/9.html Enjoy it!
 
 ./shadowsocksR.sh uninstall 2.脚本使用命令与配置文件
 
-启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/etc/init.d/shadowsocks status
+启动：/etc/init.d/shadowsocks start 
+停止：/etc/init.d/shadowsocks stop 
+重启：/etc/init.d/shadowsocks restart 
+状态：/etc/init.d/shadowsocks status
 
-配置文件路径：/etc/shadowsocks.json 日志文件路径：/var/log/shadowsocks.log 代码安装目录：/usr/local/shadowsocks 3. SSR 多用户配置
+配置文件路径：/etc/shadowsocks.json 
+日志文件路径：/var/log/shadowsocks.log 
+代码安装目录：/usr/local/shadowsocks 3. SSR 多用户配置
 
 如果需要配置 SSR 多用户，那么需要修改配置文件 /etc/shadowsocks.json，示例如下，下面的配置文件表示有3个用户，port_password 对应的是3个用户的端口和密码，修改完配置文件后，用 /etc/init.d/shadowsocks restart 命令重启 SSR 服务端生效：
 
