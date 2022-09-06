@@ -13,7 +13,7 @@ clear
 echo
 echo "#############################################################"
 echo "# One click Install ShadowsocksR Server                     #"
-echo "# Intro: come to me                     #"
+echo "# Intro: Welcome Home                   #"
 echo "# Author: warren                        #"
 echo "# Github: https://github.com/shadowsocksr/shadowsocksr      #"
 echo "#############################################################"
@@ -195,8 +195,8 @@ pre_install(){
     fi
     # Set ShadowsocksR config password
     echo "Please enter password for ShadowsocksR:"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    read -p "(Default password: warren.com):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="warren.com"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
