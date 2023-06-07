@@ -42,3 +42,10 @@ Welcome to visit:https://shadowsocks.be/9.html Enjoy it!
 更改下载地址链接
 shadowsocks_r_file="shadowsocksr-3.2.2"
 shadowsocks_r_url="https://github.com/shadowsocksrr/shadowsocksr/archive/3.2.2.tar.gz"
+
+如要更改连接数
+“Protocol——param”: 设置需要连接的数值
+
+如要更改连接下载限制
+“speed_limit_per_coon”:512= 512k
+"speed_limit_per_user":1024 = 1MB
