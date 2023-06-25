@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ### BEGIN INIT INFO
 # Provides:          ShadowsocksR
@@ -10,16 +10,18 @@
 # Description:       Start or stop the ShadowsocksR server
 ### END INIT INFO
 
+# Author: Teddysun <i@teddysun.com>
+
+NAME=ShadowsocksR
+DAEMON=/usr/local/shadowsocks/server.py
 if [ -f /etc/shadowsocks-r/config.json ]; then
     CONF=/etc/shadowsocks-r/config.json
 elif [ -f /etc/shadowsocks.json ]; then
     CONF=/etc/shadowsocks.json
 fi
-NAME=ShadowsocksR
-DAEMON=/usr/local/shadowsocks/server.py
 RETVAL=0
 
-check_running() {
+check_running(){
     PID=$(ps -ef | grep -v grep | grep -i "${DAEMON}" | awk '{print $2}')
     if [ -n "$PID" ]; then
         return 0
@@ -28,7 +30,7 @@ check_running() {
     fi
 }
 
-do_start() {
+do_start(){
     check_running
     if [ $? -eq 0 ]; then
         echo "$NAME (pid $PID) is already running..."
@@ -44,7 +46,7 @@ do_start() {
     fi
 }
 
-do_stop() {
+do_stop(){
     check_running
     if [ $? -eq 0 ]; then
         $DAEMON -c $CONF -d stop
@@ -60,7 +62,7 @@ do_stop() {
     fi
 }
 
-do_status() {
+do_status(){
     check_running
     if [ $? -eq 0 ]; then
         echo "$NAME (pid $PID) is running..."
@@ -70,17 +72,17 @@ do_status() {
     fi
 }
 
-do_restart() {
+do_restart(){
     do_stop
     sleep 0.5
     do_start
 }
 
 case "$1" in
-start | stop | restart | status)
+    start|stop|restart|status)
     do_$1
     ;;
-*)
+    *)
     echo "Usage: $0 { start | stop | restart | status }"
     RETVAL=1
     ;;
